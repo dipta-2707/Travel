@@ -19,12 +19,12 @@
 
     <nav>
 
-      <div class="heading">
+      <!-- <div class="heading">
         <h2>Travel Nature</h2>
-      </div>
+      </div> -->
 
       <ul class="menu">
-        <li><a href="#booked">Booked</a></li> 
+        <!-- <li><a href="#booked">Booked</a></li>  -->
         <li><a href="gallery.php">Back</a></li> 
       </ul>
 

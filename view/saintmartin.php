@@ -18,12 +18,9 @@
 
     <nav>
 
-      <div class="heading">
-        <h2>Travel Nature</h2>
-      </div>
 
       <ul class="menu">
-        <li><a href="user_booked_packages.php">Booked</a></li> 
+        <!-- <li><a href="user_booked_packages.php">Booked</a></li>  -->
         <li><a href="gallery.php">Back</a></li> 
       </ul>
 

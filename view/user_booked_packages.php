@@ -12,7 +12,30 @@ include "../control/db_conn.php";
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
     <title>Booked Packages</title>
-    
+    <style>
+      *{
+        color: white;
+      }
+      body{
+        background-color: rgb(41, 39, 39);
+        
+      }
+      a{
+          text-decoration: none;
+          background: #555;
+          padding: 10px 15px;
+          color: #fff;
+          border-radius: 5px;
+          margin-right: 10px;
+          border: none;
+
+      }
+      a:hover{
+        background: white;
+        color: black;
+        box-shadow: 0 0 10px white;
+      }
+    </style>
 
 
 </head>
@@ -20,7 +43,9 @@ include "../control/db_conn.php";
 
 
 <!-- ---------------------- table----------------------------------- -->
-
+<nav class="d-flex me-5 mt-3 flex-row-reverse">
+      <a href="welcome.php">back</a>
+</nav>
 <section class="container py-4 table-responsive">
 
 <table class="table table-striped text-center" id="myTable">
@@ -76,15 +101,32 @@ include "../control/db_conn.php";
 
 
 </section>
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true"  data-bs-delay="2000">
+            <div class="toast-body bg-success text-light">
+                Schedule Request Sent Successfully.
+            </div>
+        </div>
+</div>
+    <?php
+        if(isset($_GET['success'])){
+            echo '<script> var success = 1; </script>';
+        }
+    ?>
 
 
-
- <!-- ------------------------ strip ------------------------------- -->
+ <!-- ------------------------ script ------------------------------- -->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
 
 
  <script>
+       if(success==1){
+        var toastLiveExample = document.getElementById('liveToast');
+        var toast = new bootstrap.Toast(toastLiveExample)
+        toast.show()
+        warning = 0;
+    }
 
 function cancleBooking(){
   var rowId =event.target.parentNode.parentNode.id;
